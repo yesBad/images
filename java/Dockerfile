@@ -26,5 +26,6 @@ ENV USER=container HOME=/home/container
 WORKDIR /home/container
 
 COPY ./prompt.py /prompt.py
+COPY ./server.properties ./server.properties
 COPY ./entrypoint.sh /entrypoint.sh
 CMD [ "/bin/bash", "/entrypoint.sh" ]
