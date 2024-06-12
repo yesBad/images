@@ -8,6 +8,8 @@ export PORT=`eval {{server.build.default.port}}`
 echo ${PORT}
 
 export MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
+echo ${MODIFIED_STARTUP}
+
 python3 /prompt.py --mode=echo
 export MODIFIED_STARTUP=`echo $(python3 /prompt.py --mode=env)`
 echo ":/home/container$ ${MODIFIED_STARTUP}"
